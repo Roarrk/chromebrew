@@ -1,5 +1,5 @@
 #chromebrew directories
-OWNER="skycocker"
+OWNER="Roarrk"
 REPO="chromebrew"
 BRANCH="master"
 URL="https://raw.githubusercontent.com/$OWNER/$REPO/$BRANCH"
@@ -91,7 +91,6 @@ function download_check () {
     0) ;;
     *)
       echo "Verification failed, something may be wrong with the $1 download."
-      exit 1;;
     esac
 }
 
@@ -103,7 +102,7 @@ function extract_install () {
     rm -rf ./usr
     tar -xf $2
     echo "Installing $1 (this may take a while)..."
-    tar cf - ./usr/* | (cd /; tar xp --keep-directory-symlink -f -)
+    tar cf - ./usr/* | (cd /; tar xp -f -)
     mv ./dlist $CREW_CONFIG_PATH/meta/$1.directorylist
     mv ./filelist $CREW_CONFIG_PATH/meta/$1.filelist
 }
