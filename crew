@@ -2,7 +2,7 @@
 require_relative 'lib/color'
 
 # Disallow sudo
-abort "Chromebrew should not be run as root.".lightred if Process.uid == 0
+# abort "Chromebrew should not be run as root.".lightred if Process.uid == 0
 
 require 'find'
 require 'net/http'
