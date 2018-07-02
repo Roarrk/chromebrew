@@ -102,7 +102,7 @@ function extract_install () {
     rm -rf ./usr
     tar -xf $2
     echo "Installing $1 (this may take a while)..."
-    tar cf - ./usr/* | (cd /; tar xp -f -)
+    tar cf - ./usr/* | (cd /; tar xp -h -f -)
     mv ./dlist $CREW_CONFIG_PATH/meta/$1.directorylist
     mv ./filelist $CREW_CONFIG_PATH/meta/$1.filelist
 }
